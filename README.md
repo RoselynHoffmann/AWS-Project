@@ -49,7 +49,7 @@ dashboard/app.py          - streamlit dashboard
 - anomaly detection uses rolling window averages per machine instead of static thresholds. machine in PNG runs hotter than one in canada so comparing against its own history makes more sense
 - dbt layers are separated so changing anomaly logic doesnt break ingestion
 
-Software should look like this:
+Software should look like this when executed:
 <img width="2877" height="1405" alt="Screenshot 2026-03-13 130309" src="https://github.com/user-attachments/assets/1f56ce73-9552-4066-9090-9766b74e656c" />
 
 Let me know for any bugs!
@@ -58,5 +58,5 @@ Let me know for any bugs!
 ## todo
 - hive style date partitioning on s3!!
 - lambda trigger to auto ingest when new files land
-- more machines + longer time ranges maybe more variety too 
+- more machines + longer time ranges maybe more variety too in machine types 
 - fault injection from the dashboard
