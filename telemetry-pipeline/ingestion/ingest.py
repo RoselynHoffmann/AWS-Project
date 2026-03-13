@@ -24,7 +24,7 @@ except Exception as e:
     print(f"  s3 download failed: {e}")
     print("  falling back to local files in raw_data/")
 
-# connect to duckdb - creates the file if it doesnt exist
+# connect to duckdb: creates the file if it doesnt exist
 con = duckdb.connect("warehouse/telemetry.duckdb")
 
 # load readings into raw_telemetry table
@@ -39,7 +39,7 @@ con.sql("""
 count = con.sql("SELECT COUNT(*) FROM raw_telemetry").fetchone()[0]
 print(f"\nLoaded {count:,} readings into raw_telemetry")
 
-# load reference tables - these are the lookup/dimension data
+# load reference tables: these are the lookup/dimension data
 con.sql("DROP TABLE IF EXISTS raw_machines")
 con.sql("""
     CREATE TABLE raw_machines AS
