@@ -1,0 +1,6 @@
+telemetry_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../warehouse/telemetry.duckdb'

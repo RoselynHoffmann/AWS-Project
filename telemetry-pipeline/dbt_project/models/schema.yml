@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stg_telemetry
+    columns:
+      - name: machine_id
+        tests: [not_null]
+      - name: reading_timestamp
+        tests: [not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['running', 'idle', 'calibrating', 'error', 'warning']
+  - name: mart_equipment_health
+    columns:
+      - name: machine_id
+        tests: [unique, not_null]
+      - name: health_status
+        tests:
+          - accepted_values:
+              values: ['healthy', 'warning', 'critical']

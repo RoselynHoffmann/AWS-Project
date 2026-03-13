@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw
+    schema: main
+    database: telemetry
+    tables:
+      - name: raw_telemetry
+      - name: raw_machines
+      - name: raw_error_codes
+      - name: raw_sites
